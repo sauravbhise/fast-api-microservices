@@ -27,7 +27,7 @@ jobs:
 
       - name: Testing with pytest
         run: |
-          # make test
+          make test
 
       - name: Building container
         run: |
