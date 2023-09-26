@@ -1,36 +1,34 @@
 name: Fast API Microservices
 
-on:
-  [push]
+on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Setup Python
-      uses: actions/setup-python@v4.7.0
-      with:
-        python-version: 3.8
+      - name: Setup Python
+        uses: actions/setup-python@v4.7.0
+        with:
+          python-version: 3.8
 
-    - name: Install dependencies
-      run: make install
+      - name: Install dependencies
+        run: make install
 
-    - name: Linting with pylint
-      run:  |
-        # make lint
+      - name: Linting with pylint
+        run: |
+          make lint
 
-    - name: Testing with pytest
-      run: | 
-        # make test
+      - name: Testing with pytest
+        run: |
+          # make test
 
-    - name: Format code
-      run: |
-        # make format
+      - name: Format code
+        run: |
+          make format
 
-    - name: Deploy
-      run: | 
-        # make deploy
+      - name: Deploy
+        run: |
+          # make deploy
