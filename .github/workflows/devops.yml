@@ -17,6 +17,10 @@ jobs:
       - name: Install dependencies
         run: make install
 
+      - name: Format code
+        run: |
+          make format
+
       - name: Linting with pylint
         run: |
           make lint
@@ -25,9 +29,9 @@ jobs:
         run: |
           # make test
 
-      - name: Format code
+      - name: Building container
         run: |
-          make format
+          # make build
 
       - name: Deploy
         run: |
